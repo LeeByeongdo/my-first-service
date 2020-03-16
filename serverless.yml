@@ -27,7 +27,6 @@ resources:
             ForwardedValues:
               QueryString: false
               Headers:
-                - "isMobile"
                 - "isEmployee"
             DefaultTTL: 86400
             MaxTTL: 31536000

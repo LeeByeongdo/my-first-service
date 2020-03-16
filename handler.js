@@ -6,17 +6,6 @@ module.exports.hello = async (event, context, callback) => {
   const request = event.Records[0].cf.request;
   const headers = request.headers;
 
-  if (headers["device"]) {
-    const device = headers["device"][0].value;
-    if (device === "mobile") {
-      headers["isMobile"] = [{ key: "isMobile", value: "true" }];
-    } else {
-      headers["isMobile"] = [{ key: "isMobile", value: "false" }];
-    }
-  } else {
-    headers["isMobile"] = [{ key: "isMobile", value: "false" }];
-  }
-
   let isEmployee = false;
 
   // from csr
